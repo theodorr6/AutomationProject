@@ -2,6 +2,9 @@ package Tests;
 
 import HelperMethods.ElementMethods;
 import HelperMethods.FrameMethods;
+import Pages.AlertWindowFramePage;
+import Pages.FramePage;
+import Pages.HomePage;
 import SharedData.SharedData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,32 +20,16 @@ public class FrameTest extends SharedData {
 
     @Test
     public void frameMethod(){
-        ElementMethods elementMethods = new ElementMethods(getWebDriver());
-        FrameMethods frameMethods = new FrameMethods(getWebDriver());
-
-        elementMethods.scrollElementByPixel(0, 450);
 
         //identificam un element
-        WebElement consentField = getWebDriver().findElement(By.className("fc-button-label"));
-        elementMethods.clickElement(consentField);
+        HomePage homePage = new HomePage(getWebDriver());
+        homePage.navigateToAlertFrameWindowPage();
 
-        WebElement alertsField= getWebDriver().findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
-        elementMethods.clickElement(alertsField);
+        AlertWindowFramePage alertWindowFramePage = new AlertWindowFramePage(getWebDriver());
+        alertWindowFramePage.navigateToFramePage();
 
-        WebElement framesField= getWebDriver().findElement(By.xpath("//span[text()='Frames']"));
-        elementMethods.clickElement(framesField);
-
-        // interactionam cu un iFrame
-        frameMethods.switchSpecificIframe("frame1");
-
-
-       // WebElement frame1Element = webDriver.findElement(By.id("sampleHeading"));
-        //specificam sa revina la frame-ul curent
-        frameMethods.switchToParentFrame();
-
-
-        frameMethods.switchSpecificIframe("frame2");
-      //  WebElement frame2Element = webDriver.findElement(By.id("sampleHeading"));
+        FramePage framePage = new FramePage(getWebDriver());
+        framePage.dealWithIFrame();
 
     }
 }

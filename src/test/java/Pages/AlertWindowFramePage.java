@@ -10,7 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 public class AlertWindowFramePage extends BasePage {
 
     @FindBy(xpath = "//span[text()='Alerts']")
-    public WebElement framesField;
+    private WebElement alertField;
+    @FindBy(xpath = "//span[text()='Frames']")
+    private WebElement framesField;
 
     public AlertWindowFramePage(WebDriver webDriver) {
         super(webDriver);
@@ -18,6 +20,10 @@ public class AlertWindowFramePage extends BasePage {
 
     public void navigateToAlertPage(){
 
+        elementMethods.clickElement(alertField);
+    }
+
+    public void navigateToFramePage(){
         elementMethods.clickElement(framesField);
     }
 }

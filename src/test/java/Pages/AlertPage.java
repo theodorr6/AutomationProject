@@ -38,4 +38,5 @@ public class AlertPage extends BasePage {
         elementMethods.clickElement(promptAlert);
         alertMethods.fillAlert(text);
     }
+
 }

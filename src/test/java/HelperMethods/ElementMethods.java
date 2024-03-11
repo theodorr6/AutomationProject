@@ -70,5 +70,8 @@ public class ElementMethods {
 
     public void clickElemForce(WebElement element){
         waitVisibleElement(element);
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        js.executeScript("arguments[0].click();",element);
+
     }
 }
