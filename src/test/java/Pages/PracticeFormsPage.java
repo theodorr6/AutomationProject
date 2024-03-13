@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 import java.io.File;
 import java.util.List;
@@ -54,6 +55,7 @@ public class PracticeFormsPage extends  BasePage{
     private List<WebElement> labelFields;
     @FindBy(xpath = "//table/tbody/tr/td[2]")
     private List<WebElement> valuesFields;
+
 
     public void fillFirstName(String firstNameFieldValue){
         elementMethods.fillElement(firstNameField, firstNameFieldValue);
@@ -123,5 +125,47 @@ public class PracticeFormsPage extends  BasePage{
 
     public void clickSubmit(){
         elementMethods.clickElemForce(submit);
+    }
+
+    public void validatePracticeFormTable(String firstNameFieldValue, String lastNameFieldValue, String emailFieldValue, String genderValue, String mobileNoFieldValue,
+                                          String subjectValue,List<String> hobbies, String filePath, String adressValue, String stateLoc, String cityLoc){
+        Assert.assertEquals(labelFields.get(0).getText(),"Student Name");
+        Assert.assertEquals(valuesFields.get(0).getText(),firstNameFieldValue + " " + lastNameFieldValue);
+
+        Assert.assertEquals(labelFields.get(1).getText(), "Student Email");
+        Assert.assertEquals(valuesFields.get(1).getText(), emailFieldValue);
+
+        Assert.assertEquals(labelFields.get(2).getText(), "Gender");
+        Assert.assertEquals(valuesFields.get(2).getText(), genderValue);
+
+        Assert.assertEquals(labelFields.get(3).getText(), "Mobile");
+        Assert.assertEquals(valuesFields.get(3).getText(), mobileNoFieldValue);
+
+        Assert.assertEquals(labelFields.get(4).getText(), "Date of Birth");
+        // Assert.assertEquals(valuesFields.get(4).getText(), dobField );
+
+        Assert.assertEquals(labelFields.get(5).getText(), "Subjects");
+        Assert.assertEquals(valuesFields.get(5).getText(), subjectValue);
+
+        Assert.assertEquals(labelFields.get(6).getText(), "Hobbies");
+        for (Integer i = 0; i < hobbies.size(); i++) {
+            Assert.assertTrue(valuesFields.get(6).getText().contains(hobbies.get(i)));
+        }
+
+        Assert.assertEquals(labelFields.get(7).getText(), "Picture");
+        String[] arrayFile = filePath.split("/");
+        Integer desiredIndex = arrayFile.length -1;
+        Assert.assertEquals(valuesFields.get(7).getText(),arrayFile[desiredIndex]);
+
+        // TEMA: de continuat validarile
+
+        Assert.assertEquals(labelFields.get(8).getText(), "Address");
+        Assert.assertEquals(valuesFields.get(8).getText(), adressValue);
+
+        Assert.assertEquals(labelFields.get(9).getText(), "State and City");
+        Assert.assertEquals(valuesFields.get(9).getText(), stateLoc + " " + cityLoc);
+
+
+
     }
 }
