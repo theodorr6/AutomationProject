@@ -42,19 +42,8 @@ public class PracticeFormTest extends SharedData {
         String cityLoc = "Delhi";
 
         PracticeFormsPage practiceFormsPage = new PracticeFormsPage(getWebDriver());
-        practiceFormsPage.fillFirstName(firstNameFieldValue);
-        practiceFormsPage.fillLastName(lastNameFieldValue);
-        practiceFormsPage.fillEmailField(emailFieldValue);
-        practiceFormsPage.fillMobileNoField(mobileNoFieldValue);
-        practiceFormsPage.pickBirthDate(dobMonthValue, yearValue, dayValue);
-        practiceFormsPage.pickGender(genderValue);
-        practiceFormsPage.pickHobbies(hobbies);
-        practiceFormsPage.pickSubjects(userSubjectsValue);
-        practiceFormsPage.uploadPicture(filePath);
-        practiceFormsPage.pickAddress(addressValue);
-        practiceFormsPage.pickState(stateLoc);
-        practiceFormsPage.pickCity(cityLoc);
-        practiceFormsPage.clickSubmit();
+        practiceFormsPage.fillEntireForm(firstNameFieldValue, lastNameFieldValue, emailFieldValue, mobileNoFieldValue, dobMonthValue, yearValue, dayValue,
+                genderValue, hobbies, userSubjectsValue, filePath, addressValue, stateLoc, cityLoc);
         practiceFormsPage.validatePracticeFormTable(firstNameFieldValue,lastNameFieldValue, emailFieldValue, genderValue, mobileNoFieldValue,
                 subjectValue, hobbies, filePath, addressValue, stateLoc, cityLoc);
 

@@ -165,7 +165,23 @@ public class PracticeFormsPage extends  BasePage{
         Assert.assertEquals(labelFields.get(9).getText(), "State and City");
         Assert.assertEquals(valuesFields.get(9).getText(), stateLoc + " " + cityLoc);
 
+    }
 
-
+    public void fillEntireForm(String firstNameFieldValue, String lastNameFieldValue, String emailFieldValue, String mobileNoFieldValue, String dobMonthValue,
+                               String yearValue, String dayValue, String genderValue, List<String> hobbies, String userSubjectsValue, String filePath, String addressValue,
+                               String stateLoc, String cityLoc){
+        fillFirstName(firstNameFieldValue);
+        fillLastName(lastNameFieldValue);
+        fillEmailField(emailFieldValue);
+        fillMobileNoField(mobileNoFieldValue);
+        pickBirthDate(dobMonthValue, yearValue, dayValue);
+        pickGender(genderValue);
+        pickHobbies(hobbies);
+        pickSubjects(userSubjectsValue);
+        uploadPicture(filePath);
+        pickAddress(addressValue);
+        pickState(stateLoc);
+        pickCity(cityLoc);
+        clickSubmit();
     }
 }
