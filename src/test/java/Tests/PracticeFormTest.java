@@ -37,6 +37,9 @@ public class PracticeFormTest extends SharedData {
         String userSubjectsValue = "comp";
         String filePath = "src/test/resources/blur.png";
         String addressValue = "oras, strada, numar";
+        String subjectValue = "Computer Science";
+        String stateLoc = "NCR";
+        String cityLoc = "Delhi";
 
         PracticeFormsPage practiceFormsPage = new PracticeFormsPage(getWebDriver());
         practiceFormsPage.fillFirstName(firstNameFieldValue);
@@ -49,25 +52,10 @@ public class PracticeFormTest extends SharedData {
         practiceFormsPage.pickSubjects(userSubjectsValue);
         practiceFormsPage.uploadPicture(filePath);
         practiceFormsPage.pickAddress(addressValue);
+        practiceFormsPage.pickState(stateLoc);
+        practiceFormsPage.pickCity(cityLoc);
+        practiceFormsPage.clickSubmit();
 
-//        WebElement selectState = getWebDriver().findElement(By.xpath("//div[text()='Select State']"));
-//        js.executeScript("arguments[0].click();", selectState);
-//        String subjectValue = "Computer Science";
-//
-//
-//       WebElement selectState2 = getWebDriver().findElement(By.id("react-select-3-input"));
-//       String stateLoc = "NCR";
-//       elementMethods.fillPressElement(selectState2,stateLoc,Keys.ENTER);
-//
-//        WebElement selectCity = getWebDriver().findElement(By.xpath("//div[text()='Select City']"));
-//        js.executeScript("arguments[0].click();", selectCity);
-//
-//        WebElement selectCity2 = getWebDriver().findElement(By.id("react-select-4-input"));
-//        String cityLoc = "Delhi";
-//        elementMethods.fillPressElement(selectCity2, cityLoc, Keys.ENTER);
-//
-//        WebElement submit = getWebDriver().findElement(By.id("submit"));
-//        js.executeScript("arguments[0].click()", submit);
 //
 //        //validam tabelul cu valori
 //        List<WebElement> labelFields = getWebDriver().findElements(By.xpath("//table/tbody/tr/td[1]"));
