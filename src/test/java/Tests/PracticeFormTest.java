@@ -46,7 +46,5 @@ public class PracticeFormTest extends SharedData {
                 genderValue, hobbies, userSubjectsValue, filePath, addressValue, stateLoc, cityLoc);
         practiceFormsPage.validatePracticeFormTable(firstNameFieldValue,lastNameFieldValue, emailFieldValue, genderValue, mobileNoFieldValue,
                 subjectValue, hobbies, filePath, addressValue, stateLoc, cityLoc);
-
-
     }
 }
