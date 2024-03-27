@@ -32,9 +32,7 @@ public class PracticeFormTest extends SharedData {
         formsPage.navigateToPracticeForm();
 
         PracticeFormsPage practiceFormsPage = new PracticeFormsPage(getWebDriver());
-        practiceFormsPage.fillEntireForm(firstNameFieldValue, lastNameFieldValue, emailFieldValue, mobileNoFieldValue, dobMonthValue, yearValue, dayValue,
-                genderValue, hobbies, userSubjectsValue, filePath, addressValue, stateLoc, cityLoc);
-        practiceFormsPage.validatePracticeFormTable(firstNameFieldValue,lastNameFieldValue, emailFieldValue, genderValue, mobileNoFieldValue,
-                subjectValue, hobbies, filePath, addressValue, stateLoc, cityLoc);
+        practiceFormsPage.fillEntireForm(practiceFormObject);
+        practiceFormsPage.validatePracticeFormTable(practiceFormObject);
     }
 }

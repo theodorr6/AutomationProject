@@ -57,16 +57,13 @@ public class PracticeFormObject extends GeneralObject {
                     hobbies = getPreparedValue(testData.get(key));
                     break;
                 case "userSubjectsValue":
-                    setSubjectValue(testData.get(key));
+                    setUserSubjectsValue(testData.get(key));
                     break;
                 case "filePath":
                     setFilePath(testData.get(key));
                     break;
                 case "addressValue":
                     setAdressValue(testData.get(key));
-                    break;
-                case "subjectValue":
-                    setSubjectValue(testData.get(key));
                     break;
                 case "stateLoc":
                     setStateLoc(testData.get(key));
