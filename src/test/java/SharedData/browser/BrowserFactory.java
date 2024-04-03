@@ -16,7 +16,7 @@ public class BrowserFactory {
         String browser = System.getProperty("browser");
 
         if(Boolean.parseBoolean(ciCd)){
-            browserData.put("headless", "--headless = new");
+            browserData.put("headless","--headless=new");
         } else {
             browser = browserData.get("browser");
         }
