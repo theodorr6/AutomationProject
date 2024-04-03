@@ -129,41 +129,41 @@ public class PracticeFormsPage extends  BasePage{
     }
 
     public void validatePracticeFormTable(PracticeFormObject practiceFormObject){
-        Assert.assertEquals(labelFields.get(0).getText(),"Student Name");
-        Assert.assertEquals(valuesFields.get(0).getText(),practiceFormObject.getFirstNameFieldValue() + " " + practiceFormObject.getLastNameFieldValue());
+        elementMethods.validateElementText(labelFields.get(0),"Student Name");
+        elementMethods.validateElementText(valuesFields.get(0),practiceFormObject.getFirstNameFieldValue() + " " + practiceFormObject.getLastNameFieldValue());
 
-        Assert.assertEquals(labelFields.get(1).getText(), "Student Email");
-        Assert.assertEquals(valuesFields.get(1).getText(), practiceFormObject.getEmailFieldValue());
+        elementMethods.validateElementText(labelFields.get(1), "Student Email");
+        elementMethods.validateElementText(valuesFields.get(1), practiceFormObject.getEmailFieldValue());
 
-        Assert.assertEquals(labelFields.get(2).getText(), "Gender");
-        Assert.assertEquals(valuesFields.get(2).getText(), practiceFormObject.getGenderValue());
+        elementMethods.validateElementText(labelFields.get(2), "Gender");
+        elementMethods.validateElementText(valuesFields.get(2), practiceFormObject.getGenderValue());
 
-        Assert.assertEquals(labelFields.get(3).getText(), "Mobile");
-        Assert.assertEquals(valuesFields.get(3).getText(), practiceFormObject.getMobileNoFieldValue());
+        elementMethods.validateElementText(labelFields.get(3), "Mobile");
+        elementMethods.validateElementText(valuesFields.get(3), practiceFormObject.getMobileNoFieldValue());
 
-        Assert.assertEquals(labelFields.get(4).getText(), "Date of Birth");
+        elementMethods.validateElementText(labelFields.get(4), "Date of Birth");
        // Assert.assertEquals(valuesFields.get(4).getText(), practiceFormObject.get );
 
-        Assert.assertEquals(labelFields.get(5).getText(), "Subjects");
-        Assert.assertEquals(valuesFields.get(5).getText(), practiceFormObject.getUserSubjectsValue());
+        elementMethods.validateElementText(labelFields.get(5), "Subjects");
+        elementMethods.validateElementText(valuesFields.get(5), practiceFormObject.getUserSubjectsValue());
 
-        Assert.assertEquals(labelFields.get(6).getText(), "Hobbies");
-        for (Integer i = 0; i < practiceFormObject.getHobbies().size(); i++) {
-            Assert.assertTrue(valuesFields.get(6).getText().contains(practiceFormObject.getHobbies().get(i)));
+        elementMethods.validateElementText(labelFields.get(6), "Hobbies");
+        for (String hobby : practiceFormObject.getHobbies()) {
+            elementMethods.validateElementTextSpecial(valuesFields.get(6), hobby);
         }
 
-        Assert.assertEquals(labelFields.get(7).getText(), "Picture");
+        elementMethods.validateElementText(labelFields.get(7), "Picture");
         String[] arrayFile = practiceFormObject.getFilePath().split("/");
         Integer desiredIndex = arrayFile.length -1;
-        Assert.assertEquals(valuesFields.get(7).getText(),arrayFile[desiredIndex]);
+        elementMethods.validateElementText(valuesFields.get(7),arrayFile[desiredIndex]);
 
         // TEMA: de continuat validarile
 
-        Assert.assertEquals(labelFields.get(8).getText(), "Address");
-        Assert.assertEquals(valuesFields.get(8).getText(), practiceFormObject.getAdressValue());
+        elementMethods.validateElementText(labelFields.get(8), "Address");
+        elementMethods.validateElementText(valuesFields.get(8), practiceFormObject.getAdressValue());
 
-        Assert.assertEquals(labelFields.get(9).getText(), "State and City");
-        Assert.assertEquals(valuesFields.get(9).getText(), practiceFormObject.getStateLoc() + " " + practiceFormObject.getCityLoc());
+        elementMethods.validateElementText(labelFields.get(9), "State and City");
+        elementMethods.validateElementText(valuesFields.get(9), practiceFormObject.getStateLoc() + " " + practiceFormObject.getCityLoc());
 
     }
 

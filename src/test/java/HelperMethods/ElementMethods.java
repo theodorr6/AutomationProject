@@ -39,6 +39,10 @@ public class ElementMethods {
         Assert.assertEquals(actual, expected);
     }
 
+    public void validateElementTextSpecial(WebElement element, String text) {
+        Assert.assertTrue(element.getText().contains(text));
+    }
+
     public void fillElement(WebElement element, String value){
         waitVisibleElement(element);
         element.sendKeys(value);
