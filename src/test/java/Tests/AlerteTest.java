@@ -5,14 +5,14 @@ import HelperMethods.ElementMethods;
 import Pages.AlertPage;
 import Pages.AlertWindowFramePage;
 import Pages.HomePage;
-import SharedData.SharedData;
+import SharedData.Hooks;
 import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class AlerteTest extends SharedData {
+public class AlerteTest extends Hooks {
 
 
     @Test
