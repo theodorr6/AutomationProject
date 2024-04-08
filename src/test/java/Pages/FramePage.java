@@ -18,14 +18,17 @@ public class FramePage extends BasePage{
     public void dealWithIFrame(){
         frameMethods.switchSpecificIframe("frame1");
         LoggerUtility.infoTest("The user switches to specific iframe");
+
         System.out.println(frameElement.getText());
         LoggerUtility.infoTest("The user interacts with frameElement text");
+
         //specificam sa revina la frame-ul curent
         frameMethods.switchToParentFrame();
         LoggerUtility.infoTest("The user clicks on parent frame");
 
         frameMethods.switchSpecificIframe("frame2");
         LoggerUtility.infoTest("The user switches to specific iframe");
+
         System.out.println(frameElement.getText());
         LoggerUtility.infoTest("The user interacts with frameElement text");
     }
